@@ -80,7 +80,7 @@
                     <!-- /.nav-second-level -->
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-play fa-fw"></i> Curso<span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-book fa-fw"></i> Curso<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
                             <a href="registroCurso.php">Registro</a>
@@ -92,7 +92,7 @@
                     <!-- /.nav-second-level -->
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-sun-o fa-fw"></i> Modalidad<span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-moon-o"></i> Modalidad<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
                             <a href="registroModalidad.php">Registro</a>
@@ -104,7 +104,7 @@
                     <!-- /.nav-second-level -->
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-magic fa-fw"></i> Estado Postulación<span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-archive fa-fw"></i> Estado Postulación<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
                             <a href="registroEstado_postulacion.php">Registro</a>

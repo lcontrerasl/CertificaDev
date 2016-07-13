@@ -9,11 +9,6 @@
 
         <div id="wrapper">
 
-            <!-- Navigation -->
-            <?php
-            include_once './modulos/nav.php';
-            ?>
-
             <!-- Page Content -->
             <div id="page-wrapper">
                 <div class="container-fluid">

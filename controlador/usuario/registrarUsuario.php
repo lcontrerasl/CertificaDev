@@ -13,7 +13,7 @@ $usuario->setPassUsuario($_POST['passUsuario']);
 
 $usuario->create();
 
-$url = '../../vista/listadoUsuarios.php';
+$url = '../../';
 header('Location: ' . $url, true, $permanet ? 301 : 302);
 exit();
 

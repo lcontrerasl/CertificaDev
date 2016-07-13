@@ -1,9 +1,9 @@
 <?php
-include_once '../modelo/Usuario.php';
+include_once '../modelo/Estado_postulacion.php';
 include_once '../modelo/Conexion.php';
 
-$usuario = new Usuario();
-$usuarios = $usuario->read('*', '', '');
+$estado_postulacion = new Estado_postulacion();
+$estado_postulaciones = $estado_postulacion->read('*', '', '');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@ $usuarios = $usuario->read('*', '', '');
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
-                            <h1 class="page-header">Usuarios</h1>
+                            <h1 class="page-header">Estado de Postulaciones</h1>
                         </div>
                         <!-- /.col-lg-12 -->
                     </div>
@@ -35,19 +35,16 @@ $usuarios = $usuario->read('*', '', '');
                         <div class="col-lg-12">
                             <div class="panel panel-default">
                                 <div class="panel-body">
-                                    <h3>Listado de Usuarios</h3>
+                                    <h3>Listado Estado de Postulaciones</h3>
                                     <div class="table-responsive">
                                         <table class="table table-bordered table-striped">
                                             <thead>
                                                 <tr>
                                                     <th>
-                                                        N° 
+                                                        # 
                                                     </th>
                                                     <th>
                                                         Nombre
-                                                    </th>
-                                                    <th>
-                                                        Rut
                                                     </th>
                                                     <th>
 
@@ -56,21 +53,18 @@ $usuarios = $usuario->read('*', '', '');
                                             </thead>
                                             <tbody>
                                                 <?php
-                                                for ($i = 0; $i < count($usuarios); $i++) {
-                                                    $usuarioAux = $usuarios[$i];
+                                                for ($i = 0; $i < count($estado_postulaciones); $i++) {
+                                                    $estado_postulacionAux = $estado_postulaciones[$i];
                                                     ?>
                                                     <tr>
                                                         <td>
                                                             <?= ($i + 1) ?> 
                                                         </td>
                                                         <td>
-                                                            <?= $usuarioAux['nombreUsuario'] . ' ' . $usuarioAux['ap_paternoUsuario']; ?> 
+                                                            <?= $estado_postulacionAux['nombreEstado_postulacion']; ?> 
                                                         </td>
                                                         <td>
-                                                            <?= $usuarioAux['rutUsuario']; ?> 
-                                                        </td>
-                                                        <td>
-                                                            <a href="edicionUsuario.php?idUsuario=<?= $usuarioAux['idUsuario']; ?>" class="btn btn-success">
+                                                            <a href="edicionEstado_postulacion.php?idEstado_postulacion=<?= $estado_postulacionAux['idEstado_postulacion']; ?>" class="btn btn-success">
                                                                 Detalle
                                                             </a>
                                                             <a href="" class="btn btn-danger">

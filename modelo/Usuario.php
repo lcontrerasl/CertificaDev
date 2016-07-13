@@ -102,7 +102,7 @@ class Usuario {
                 $usuarios[] = $row;
             }
         } else {
-            echo "0 results ";
+            echo $sql;
         }
         $conn->close();
         return $usuarios;

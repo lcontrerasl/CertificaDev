@@ -1,4 +1,6 @@
-
+<?php
+session_start();
+?>
 <!--A Flat Design Login Page by Codelator.com-->
 <html>
     <head>
@@ -74,16 +76,51 @@
                 background-color:#e5bf05;
             }
 
+
+            .loginbutton2{
+                background-color:#31b131;
+                border-radius:5px/5px;
+                -webkit-border-radius:5px/5px;
+                -moz-border-radius:5px/5px;
+                color:#333;
+                display:inline-block;
+                font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+                font-size:18px;
+                font-weight:bold;
+                width:270px;
+                text-align:center;
+                line-height:50px;
+                text-decoration:none;
+                height:50px;
+                margin-top:20px;
+                margin-bottom:20px;
+                border:none;
+                outline:0;
+                cursor: pointer;
+            }
+
+            .loginbutton2:active {
+                position:relative;
+                top:1px;
+            }
+
+            .loginbutton2:hover{
+                background-color:#e5bf05;
+            }
+
         </style>
     </head>
     <body>
-        <form id="loginform" method="post" action="">
-            <input type="text" class="input" placeholder="E-mail" /> 
-            <input type="password" class="input" placeholder="Password" />
+        <form id="loginform" method="post" action="controlador/usuario/login.php">
+            <input type="text" name="rutUsuario" class="input" placeholder="Rut" required=""/> 
+            <input type="password" name="passUsuario" class="input" placeholder="Password" required=""/>
             <input type="submit" class="loginbutton" value="ENTRAR" />
         </form>
-        <p><a href="../CertificaDev/vista/registroUsuario.php">REGISTRO</a></p>
-        <p><a href="#">Olvido su contraseña</a></p>
+        <p><a href="vista/registroUsuario.php">Registrarse como Usuario</a></p>
+        <p><a class="loginbutton2" href="vista/registroPostulante.php">Postular</a></p>
 
     </body>
 </html>
+<?php
+session_destroy();
+?>
