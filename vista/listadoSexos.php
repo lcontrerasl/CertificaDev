@@ -67,7 +67,18 @@ $sexos = $sexo->read('*', '', '');
                                                             <a href="edicionSexo.php?idSexo=<?= $sexoAux['idSexo']; ?>" class="btn btn-success">
                                                                 Detalle
                                                             </a>
-                                                            <a href="" class="btn btn-danger">
+                                                            <script>
+                                                                function validar() {
+                                                                    var r = confirm('Está seguro de eliminar esta entidad?');
+                                                                    if (r) {
+                                                                        return true;
+                                                                    } else {
+                                                                        return false;
+                                                                    }
+                                                                }
+                                                            </script>
+
+                                                            <a href="../controlador/sexo/eliminar.php?idSexo=<?= $sexoAux['idSexo']; ?>" onclick="return validar()" class="btn btn-danger">
                                                                 Eliminar
                                                             </a>
                                                         </td>
