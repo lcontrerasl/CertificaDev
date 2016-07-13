@@ -1,3 +1,14 @@
+<?php
+session_start();
+$usuarioConectado;
+if (!isset($_SESSION['usuarioConectado'])) {
+    $url = '../';
+    header('Location: ' . $url, true, $permanet ? 301 : 302);
+    exit();
+} else {
+    $usuarioConectado = $_SESSION['usuarioConectado'];
+}
+?>
 <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
     <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -13,10 +24,10 @@
     <ul class="nav navbar-top-links navbar-right">
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                <i class="fa fa-user fa-fw"></i><?= $usuarioConectado['nombreUsuario'] . ' ' . $usuarioConectado['ap_paternoUsuario']; ?>  <i class="fa fa-caret-down"></i>
             </a>
             <ul class="dropdown-menu dropdown-user">
-                <li><a href="#"><i class="fa fa-user fa-fw"></i> Perfil de Usuario</a>
+                <li><a href="edicionUsuario.php?idUsuario=<?= $usuarioConectado['idUsuario']; ?>"><i class="fa fa-user fa-fw"></i> Perfil de Usuario</a>
                 </li>
                 <li class="divider"></li>
                 <li><a href="../"><i class="fa fa-sign-out fa-fw"></i> Salir</a>
@@ -31,18 +42,6 @@
     <div class="navbar-default sidebar" role="navigation">
         <div class="sidebar-nav navbar-collapse">
             <ul class="nav" id="side-menu">
-                <li>
-                    <a href="#"><i class="fa fa-user fa-fw"></i> Usuario<span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level">
-                        <li>
-                            <a href="registroUsuario.php">Registro</a>
-                        </li>
-                        <li>
-                            <a href="listadoUsuarios.php">Listado</a>
-                        </li>
-                    </ul>
-                    <!-- /.nav-second-level -->
-                </li>
                 <li>
                     <a href="#"><i class="fa fa-map-marker fa-fw"></i> Comuna<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
@@ -80,7 +79,7 @@
                     <!-- /.nav-second-level -->
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-book fa-fw"></i> Curso<span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-play fa-fw"></i> Curso<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
                             <a href="registroCurso.php">Registro</a>
@@ -92,7 +91,7 @@
                     <!-- /.nav-second-level -->
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-moon-o"></i> Modalidad<span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-sun-o fa-fw"></i> Modalidad<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
                             <a href="registroModalidad.php">Registro</a>
@@ -104,13 +103,25 @@
                     <!-- /.nav-second-level -->
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-archive fa-fw"></i> Estado Postulación<span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-magic fa-fw"></i> Estado Postulación<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
                             <a href="registroEstado_postulacion.php">Registro</a>
                         </li>
                         <li>
                             <a href="listadoEstado_postulaciones.php">Listado</a>
+                        </li>
+                    </ul>
+                    <!-- /.nav-second-level -->
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-angellist fa-fw"></i> Postulación<span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="listadoPostulantes.php">Listado</a>
+                        </li>
+                        <li>
+                            <a href="buscadores.php">Buscadores</a>
                         </li>
                     </ul>
                     <!-- /.nav-second-level -->
