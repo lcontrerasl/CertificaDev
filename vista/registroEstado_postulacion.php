@@ -28,7 +28,7 @@
                         <div class="col-lg-12">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    Formulario para el ingreso de Estado_postulaciones
+                                    Formulario para el ingreso de Estado Postulaciones
                                 </div>
                                 <div class="panel-body">
                                     <div class="row">
@@ -37,7 +37,7 @@
                                                 <div class="form-group">
                                                     <label>Nombre</label>
                                                     <input type="text" name="nombreEstado_postulacion" class="form-control">
-                                                    <p class="help-block">Ingrese el nombre de la estado_postulacion.</p>
+                                                    <p class="help-block">Ingrese el nombre de la Estado Postulacion.</p>
                                                 </div>
                                                 <button type="submit" class="btn btn-default">Guardar</button>
                                                 <button type="reset" class="btn btn-default">Limpiar</button>

@@ -18,7 +18,7 @@ class Conexion {
     }
 
     function obtenerConexion() {
-        $conn = mysqli_connect('localhost', 'root', 'campanita', 'certificadev');
+        $conn = mysqli_connect('localhost', 'root', '', 'certificadev');
         if (mysqli_connect_errno()) {
             echo 'No se pudo conectar ' . mysqli_connect_error();
         }
