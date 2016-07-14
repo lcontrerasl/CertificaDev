@@ -41,7 +41,7 @@ $usuarios = $usuario->read('*', '', '');
                                             <thead>
                                                 <tr>
                                                     <th>
-                                                        N° 
+                                                        # 
                                                     </th>
                                                     <th>
                                                         Nombre
